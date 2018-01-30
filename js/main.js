@@ -1,6 +1,4 @@
 const form = document.querySelector('.formWithValidation');
-const password = form.querySelector('.password');
-const passwordConfirmation = form.querySelector('.passwordConfirmation');
 const fields = form.querySelectorAll('.field');
 
 // Generate error
@@ -32,12 +30,15 @@ const fieldsBlankError = () => {
 
 // Error if password does not match
 const passwordConf = () => {
+    let password = form.querySelector('.password');
+    let passwordConfirmation = form.querySelector('.passwordConfirmation');
     if(password.value !== passwordConfirmation.value) {
         let error = generateError('Password does not match');
         passwordConfirmation.parentElement.insertBefore(error, passwordConfirmation);
     }
 };
 
+// Form validation
 form.addEventListener('submit', event => {
     event.preventDefault();
     removeErrors();
