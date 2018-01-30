@@ -1,7 +1,7 @@
 const form = document.querySelector('.formWithValidation');
 const fields = form.querySelectorAll('.field');
 
-// Generate error
+// Generate error.
 const generateError = (text) => {
     let error = document.createElement('div');
     error.className = 'error';
@@ -10,7 +10,7 @@ const generateError = (text) => {
     return error;
 };
 
-// Remove errors
+// Remove errors.
 const removeErrors = () => {
     let errors = form.querySelectorAll('.error');
     for (let i = 0; i<errors.length; i++){
@@ -18,7 +18,7 @@ const removeErrors = () => {
     }
 };
 
-// Error if field or fields are blank
+// Error if field or fields are blank.
 const fieldsBlankError = () => {
     for (let i = 0; i<fields.length; i++) {
         if(!fields[i].value){
@@ -28,7 +28,7 @@ const fieldsBlankError = () => {
     };
 };
 
-// Error if password does not match
+// Error if password does not match.
 const passwordConf = () => {
     let password = form.querySelector('.password');
     let passwordConfirmation = form.querySelector('.passwordConfirmation');
@@ -38,7 +38,7 @@ const passwordConf = () => {
     }
 };
 
-// Form validation
+// Form validation.
 form.addEventListener('submit', event => {
     event.preventDefault();
     removeErrors();
